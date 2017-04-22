@@ -19,3 +19,10 @@
   background-color:  #404044;
     min-width: 10vw;
 }
+
+.mat-toolbar {
+    background-color: #000000;
+    color: white;
+    padding-left: 0;
+    padding-right: 0;
+}
