@@ -1,9 +1,24 @@
 
-.mat-toolbar{
+.mat-toolbar {
     background-color: #000000;
     color: white;
+    padding-left: 0;
+    padding-right: 0;
 }
 
-.mat-toolbar-row{
+.mat-toolbar-row {
+    height: 50px;
+}
 
+.top-bar {
+padding: 0 10px 0 100px;
+}
+
+.menu-bar {
+    background-color: darkgray;
+    padding: 0 10px 0 150px;
+}
+
+.spacer {
+    flex: 1 1 auto;
 }
