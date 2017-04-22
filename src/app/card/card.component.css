@@ -1,0 +1,9 @@
+.card {
+    width: 400px;
+}
+
+.header {
+    /*background-image: url('./src/app/card/resources/1.jpg');*/
+    background-color: #000088;
+    background-size: cover;
+}

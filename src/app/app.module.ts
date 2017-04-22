@@ -8,12 +8,16 @@ import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CardComponent } from './card/card.component';
+import { GridListComponent } from './grid-list/grid-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SideNavComponent,
-    NavbarComponent
+    NavbarComponent,
+    CardComponent,
+    GridListComponent
   ],
   imports: [
     BrowserModule,
