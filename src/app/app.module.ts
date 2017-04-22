@@ -11,11 +11,14 @@ import { AngularFireModule } from 'angularfire2';
 import { AppComponent } from './app.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CreateVideoComponent } from './create-video/create-video.component';
 import { CardComponent } from './card/card.component';
 import { GridListComponent } from './grid-list/grid-list.component';
 import { RouterModule }   from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { VideoComponent } from './video/video.component';
+import { CreateVideoService } from './create-video/create-video.service'
+
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -32,6 +35,7 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
+    CreateVideoComponent,
     SideNavComponent,
     NavbarComponent,
     CardComponent,
@@ -49,7 +53,7 @@ export const firebaseConfig = {
     AppRoutingModule,
     BsDropdownModule.forRoot()
   ],
-  providers: [],
+  providers: [CreateVideoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
