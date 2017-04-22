@@ -6,6 +6,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 import { BsDropdownModule } from 'ngx-bootstrap';
 
+import { AngularFireModule } from 'angularfire2';
+
 import { AppComponent } from './app.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -16,6 +18,16 @@ import { HomeComponent } from './home/home.component';
 import { VideoComponent } from './video/video.component';
 
 import { AppRoutingModule }     from './app-routing.module';
+
+
+// Must export the config
+export const firebaseConfig = {
+  apiKey: "AIzaSyBo5aXDOGpZSsQBrDLLusoyBpEhVzohfD8",
+  authDomain: "tech-flix.firebaseapp.com",
+  databaseURL: "https://tech-flix.firebaseio.com",
+  storageBucket: "tech-flix.appspot.com",
+  messagingSenderId: "245237405131"
+};
 
 @NgModule({
   declarations: [
@@ -33,6 +45,7 @@ import { AppRoutingModule }     from './app-routing.module';
     HttpModule,
     BrowserAnimationsModule,
     MaterialModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     AppRoutingModule,
     BsDropdownModule.forRoot()
   ],
