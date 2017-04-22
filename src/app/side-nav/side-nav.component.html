@@ -1,19 +1,32 @@
 <md-sidenav-container class="sidenav-container">
-    <md-sidenav #sidenav class="sidenav">
-        Item 1
+    <md-toolbar>
+        <div>
+            <button md-icon-button (click)="sidenav.toggle()">>>></button>
+            <span>Video Menu</span>
+            <span>Video1 </span>
+            <span>Video2 </span>
+        </div>
+    </md-toolbar>
+
+    <md-sidenav #sidenav mode="side" class="sidenav">
+        <nav>
+            <h5 class="bg-info">Angular</h5>
+        </nav>
+        <nav>
+            <h3>Vue</h3>
+        </nav>
+        <nav>
+            <h3>React</h3>
+        </nav>
+        <nav>
+            <h3>Ember</h3>
+        </nav>
+
     </md-sidenav>
 
     <div class="sidenav-content">
         <div>
-            <grid-list></grid-list>
-        </div>
-        <!--<div>-->
-            <!--<card></card>-->
-        <!--</div>-->
-        <div>
-            <button md-button (click)="sidenav.open()">
-                Click to Open sidenav
-            </button>
+            <card></card>
         </div>
     </div>
 </md-sidenav-container>

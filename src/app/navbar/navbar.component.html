@@ -1,10 +1,13 @@
-<md-toolbar color="accent">
-  <div class="top-bar">
-    <span>Tech-GAG.tv</span>
-  </div>
-  <md-toolbar-row class="menu-bar">
-    <span>tech1</span>
-    <span class="spacer"></span>
-  </md-toolbar-row>
+<md-toolbar color="accent" class="navbar">
+    <div class="top-bar">
+        <button md-icon-button [routerLink]="['/home']">home</button>
+        <span>Tech-flix.tv</span>
+    </div>
+    <md-toolbar-row class="menu-bar">
+        <span>
+            <a routerLink="/video" routerLinkActive="active">Frontend</a>
+        </span>
+        <span class="spacer"></span>
+    </md-toolbar-row>
 </md-toolbar>
 

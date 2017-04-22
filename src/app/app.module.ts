@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
+import { BsDropdownModule } from 'ngx-bootstrap';
 
 import { AngularFireModule } from 'angularfire2';
 
@@ -12,6 +13,11 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CardComponent } from './card/card.component';
 import { GridListComponent } from './grid-list/grid-list.component';
+import { RouterModule }   from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { VideoComponent } from './video/video.component';
+
+import { AppRoutingModule }     from './app-routing.module';
 
 
 // Must export the config
@@ -29,7 +35,9 @@ export const firebaseConfig = {
     SideNavComponent,
     NavbarComponent,
     CardComponent,
-    GridListComponent
+    GridListComponent,
+    HomeComponent,
+    VideoComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +46,8 @@ export const firebaseConfig = {
     BrowserAnimationsModule,
     MaterialModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    AppRoutingModule,
+    BsDropdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
