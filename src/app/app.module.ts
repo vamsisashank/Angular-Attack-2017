@@ -18,9 +18,13 @@ import { RouterModule }   from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { VideoComponent } from './video/video.component';
 import { CreateVideoService } from './create-video/create-video.service'
+import { VideoplayboxComponent } from './videoplaybox/videoplaybox.component';
 
 
 import { AppRoutingModule }     from './app-routing.module';
+
+
+import { GetvideosService } from './video-services/getvideos.service'
 
 
 // Must export the config
@@ -41,7 +45,8 @@ export const firebaseConfig = {
     CardComponent,
     GridListComponent,
     HomeComponent,
-    VideoComponent
+    VideoComponent,
+    VideoplayboxComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,10 @@ export const firebaseConfig = {
     AppRoutingModule,
     BsDropdownModule.forRoot()
   ],
-  providers: [CreateVideoService],
+  providers: [
+    CreateVideoService,
+    GetvideosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
