@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
+import { AppStateService } from "./../shared/app-state.service";
 
 
 @Component({
@@ -13,11 +14,14 @@ export class VideoplayboxComponent implements OnInit {
   videoUrl: SafeResourceUrl;
   video: any = {id: 'wzrnuUOoFNM'};
   baseUrl:string = 'https://www.youtube.com/embed/';
-  constructor(private sanitizer: DomSanitizer) {
-    this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.baseUrl + this.video.id);
+  constructor(private sanitizer: DomSanitizer, private AppStateService: AppStateService) {
+
   }
 
   ngOnInit() {
+    console.log(this.AppStateService);
+    var currentVideoId = this.AppStateService.activeVideo.videoId;
+    this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.baseUrl + currentVideoId);
 
   }
 

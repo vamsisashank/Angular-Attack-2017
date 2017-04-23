@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 import { BsDropdownModule } from 'ngx-bootstrap';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AngularFireModule } from 'angularfire2';
 
@@ -17,14 +18,18 @@ import { GridListComponent } from './grid-list/grid-list.component';
 import { RouterModule }   from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { VideoComponent } from './video/video.component';
-import { CreateVideoService } from './create-video/create-video.service'
 import { VideoplayboxComponent } from './videoplaybox/videoplaybox.component';
 
 
 import { AppRoutingModule }     from './app-routing.module';
 
 
-import { GetvideosService } from './video-services/getvideos.service'
+import { GetvideosService } from './video-services/getvideos.service';
+import { CreateVideoService } from './create-video/create-video.service';
+import { AppStateService } from "./shared/app-state.service";
+import { VideoListItemComponent } from './video-list-item/video-list-item.component';
+import { VideoListComponent } from './video-list/video-list.component';
+
 
 
 // Must export the config
@@ -46,7 +51,9 @@ export const firebaseConfig = {
     GridListComponent,
     HomeComponent,
     VideoComponent,
-    VideoplayboxComponent
+    VideoplayboxComponent,
+    VideoListItemComponent,
+    VideoListComponent
   ],
   imports: [
     BrowserModule,
@@ -56,11 +63,13 @@ export const firebaseConfig = {
     MaterialModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AppRoutingModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    NgxPaginationModule
   ],
   providers: [
     CreateVideoService,
-    GetvideosService
+    GetvideosService,
+    AppStateService
   ],
   bootstrap: [AppComponent]
 })
