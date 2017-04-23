@@ -1,9 +1,8 @@
 <div class="embed-container">
-  <iframe width="560"
-          height="315"
-          frameborder="0"
-          [src]="videoUrl"
-          frameborder="0"
-          allowfullscreen>
-  </iframe>
+    <iframe width="600"
+            height="400"
+            frameborder="0"
+            allowfullscreen
+            [src]="AppStateService.activeVideo?.videoId | youtubeSafeUrl">
+    </iframe>
 </div>

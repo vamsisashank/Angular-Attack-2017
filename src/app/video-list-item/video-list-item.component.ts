@@ -17,5 +17,7 @@ export class VideoListItemComponent implements OnInit {
 
   onClick(){
     this.AppStateService.activeVideo = this.video;
+
+    console.log(this.AppStateService);
   }
 }

@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 import { BsDropdownModule } from 'ngx-bootstrap';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NguiStickyModule }  from '@ngui/sticky';
 
 import { AngularFireModule } from 'angularfire2';
 
@@ -21,7 +21,7 @@ import { VideoComponent } from './video/video.component';
 import { VideoplayboxComponent } from './videoplaybox/videoplaybox.component';
 
 
-import { AppRoutingModule }     from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 
 import { GetvideosService } from './video-services/getvideos.service';
@@ -29,6 +29,7 @@ import { CreateVideoService } from './create-video/create-video.service';
 import { AppStateService } from "./shared/app-state.service";
 import { VideoListItemComponent } from './video-list-item/video-list-item.component';
 import { VideoListComponent } from './video-list/video-list.component';
+import { YoutubeSafeUrlPipe } from './shared/youtube-safe-url.pipe';
 
 
 
@@ -53,18 +54,19 @@ export const firebaseConfig = {
     VideoComponent,
     VideoplayboxComponent,
     VideoListItemComponent,
-    VideoListComponent
+    VideoListComponent,
+    YoutubeSafeUrlPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    BsDropdownModule.forRoot(),
     BrowserAnimationsModule,
     MaterialModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AppRoutingModule,
-    BsDropdownModule.forRoot(),
-    NgxPaginationModule
+    NguiStickyModule
   ],
   providers: [
     CreateVideoService,

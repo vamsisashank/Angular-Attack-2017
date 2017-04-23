@@ -1,14 +1,27 @@
-<md-toolbar color="accent" class="navbar">
-    <div class="top-bar">
-        <button md-icon-button [routerLink]="['/home']">home</button>
-        <span>Tech-flix.tv</span>
-        <span [routerLink]="['/create-video']">+</span>
-    </div>
-    <md-toolbar-row class="menu-bar">
-        <span>
-            <a routerLink="/video" routerLinkActive="active">Frontend</a>
+<nav>
+    <md-toolbar color="accent" class="navbar">
+        <div class="top-bar">
+            <button class="btn btn-outline-secondary" [routerLink]="['/home']">
+                <i class="material-icons">home</i>
+            </button>
+            <span style="margin-left: 32vw">Tech-flix.tv</span>
+            <span class="spacer"></span>
+            <button class="btn btn-outline-secondary"
+                    [routerLink]="['/create-video']"
+                    style="margin-left: 35vw;">
+                <i class="material-icons">add</i>
+            </button>
+        </div>
+        <md-toolbar-row class="menu-bar">
+        <span *ngFor="let menu of menulist">
+            <button class="btn btn-outline-secondary btn-sm buttom-class">
+                <a routerLink="/video/{{menu}}"
+                   routerLinkActive="active"
+                   (click)="fetchMenu(menu)">
+                    {{menu}}
+                </a>
+            </button>
         </span>
-        <span class="spacer"></span>
-    </md-toolbar-row>
-</md-toolbar>
-
+        </md-toolbar-row>
+    </md-toolbar>
+</nav>

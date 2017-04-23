@@ -17,20 +17,7 @@ export class VideoListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getvideosService.fetchVideos('angular')
-        .subscribe(data => {
-          this.appStateService.videoList = data.items.map(item => {
-            return new Video(
-                item.id.videoId,
-                item.snippet.title,
-                item.snippet.thumbnails.high.url,
-                item.snippet.channelTitle,
-                item.snippet.channelId,
-                moment(item.snippet.publishedAt).fromNow(),
-                item.snippet.description)
-          });
-          this.appStateService.activeVideo = this.appStateService.videoList[0];
-        });
+
   }
 
 }
