@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 import { BsDropdownModule } from 'ngx-bootstrap';
+import { NguiStickyModule } from '@ngui/sticky';
 
 import { AngularFireModule } from 'angularfire2';
 
@@ -17,10 +18,19 @@ import { GridListComponent } from './grid-list/grid-list.component';
 import { RouterModule }   from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { VideoComponent } from './video/video.component';
-import { CreateVideoService } from './create-video/create-video.service'
+import { VideoplayboxComponent } from './videoplaybox/videoplaybox.component';
 
 
-import { AppRoutingModule }     from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
+
+
+import { GetvideosService } from './video-services/getvideos.service';
+import { CreateVideoService } from './create-video/create-video.service';
+import { AppStateService } from "./shared/app-state.service";
+import { VideoListItemComponent } from './video-list-item/video-list-item.component';
+import { VideoListComponent } from './video-list/video-list.component';
+import { YoutubeSafeUrlPipe } from './shared/youtube-safe-url.pipe';
+
 
 
 // Must export the config
@@ -41,19 +51,28 @@ export const firebaseConfig = {
     CardComponent,
     GridListComponent,
     HomeComponent,
-    VideoComponent
+    VideoComponent,
+    VideoplayboxComponent,
+    VideoListItemComponent,
+    VideoListComponent,
+    YoutubeSafeUrlPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    BsDropdownModule.forRoot(),
     BrowserAnimationsModule,
     MaterialModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AppRoutingModule,
-    BsDropdownModule.forRoot()
+    NguiStickyModule
   ],
-  providers: [CreateVideoService],
+  providers: [
+    CreateVideoService,
+    GetvideosService,
+    AppStateService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

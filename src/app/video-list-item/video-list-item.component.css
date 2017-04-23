@@ -1,0 +1,43 @@
+.cards-display{
+
+}
+
+
+/*.title {*/
+    /*font-size: 0.85rem;*/
+    /*font-weight: bold;*/
+/*}*/
+
+/*.channel {*/
+    /*font-size: 0.75rem;*/
+/*}*/
+
+/*.date {*/
+    /*font-size: 0.75rem;*/
+/*}*/
+
+/*.description {*/
+    /*font-size: 0.75rem;*/
+
+    /*overflow: hidden;*/
+    /*white-space: nowrap;*/
+    /*text-overflow: ellipsis;*/
+
+/*}*/
+
+/*.mat-card-sm-image{*/
+    /*margin-left: 10px;*/
+/*}*/
+
+/*.mat-card {*/
+    /*height: 200px;*/
+    /*width: 500px;*/
+/*}*/
+
+/*.mat-card-content {*/
+    /*margin-bottom: 0px;*/
+    /*overflow: hidden;*/
+    /*white-space: nowrap;*/
+    /*text-overflow: ellipsis;*/
+/*}*/
+

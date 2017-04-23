@@ -19,10 +19,14 @@
 }
 
 .menu-bar {
-    background-color: darkgray;
+    background-color: black;
     padding: 0 10px 0 150px;
 }
 
 .spacer {
     flex: 1 1 auto;
+}
+
+.buttom-class{
+    margin-left: 10px;
 }

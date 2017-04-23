@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,HostListener, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import { CreateVideoService } from './../create-video/create-video.service'
+import { CreateVideoService } from './../create-video/create-video.service';
 
 declare var moment: any;
 
@@ -9,15 +9,18 @@ declare var moment: any;
   templateUrl: './side-nav.component.html',
   styleUrls: ['./side-nav.component.css']
 })
-export class SideNavComponent implements OnInit {
+export class SideNavComponent implements AfterViewInit, OnInit {
   items: FirebaseListObservable<any[]>;
+  showStyle: boolean;
 
-  constructor(private createVideoService: CreateVideoService, af: AngularFire) {
+  @ViewChild('myContainer') container: ElementRef;
+
+  constructor(
+      private createVideoService: CreateVideoService, 
+      af: AngularFire
+  ) {
     var video = createVideoService.getVideos();
     console.log(video);
-    console.log(createVideoService.getVideos());
-
-
 
     //Adding videos in list
 
@@ -39,7 +42,24 @@ export class SideNavComponent implements OnInit {
     // this.items.push(video);
   }
 
+  ngAfterViewInit() {
+    var container = this.container.nativeElement;
+  }
+
   ngOnInit() {
+  }
+
+  @HostListener("window:scroll", [])
+  onWindowScroll() {
+    this.showStyle = true;
+  }
+
+  getStyle() {
+    if(this.showStyle){
+      return "-44vw";
+    } else {
+      return "0";
+    }
   }
 
 }
