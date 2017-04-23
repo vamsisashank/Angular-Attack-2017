@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 import { BsDropdownModule } from 'ngx-bootstrap';
-import { NguiStickyModule }  from '@ngui/sticky';
 
 import { AngularFireModule } from 'angularfire2';
 
@@ -65,8 +64,7 @@ export const firebaseConfig = {
     BrowserAnimationsModule,
     MaterialModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AppRoutingModule,
-    NguiStickyModule
+    AppRoutingModule
   ],
   providers: [
     CreateVideoService,
