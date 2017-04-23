@@ -48,23 +48,22 @@ li {
 
 
 
-.sticky-container > div {
-    border: 1px solid #333;
-    background-image: linear-gradient(rgba(255, 255, 255, 1) 50%, transparent 50%, transparent);
-    background-size: 50px 50px;
-    height: auto;
-}
-.sticky-float-right {
-    background-color: rgba(0,255,0, .2);
-}
-div[ngui-sticky] {
-    min-width: 400px;
-    text-align: center;
-    background: #333;
-    color: #fff;
-    border: 1px solid #333;
-    padding: 10px;
-}
+/*.sticky-container > div {*/
+    /*border: 1px solid #333;*/
+    /*background-image: linear-gradient(rgba(255, 255, 255, 1) 50%, transparent 50%, transparent);*/
+    /*background-size: 50px 50px;*/
+    /*height: auto;*/
+/*}*/
+/*.sticky-float-right {*/
+    /*background-color: rgba(0,255,0, .2);*/
+/*}*/
+/*div[ngui-sticky] {*/
+    /*float: right;*/
+    /*background: #333;*/
+    /*color: #fff;*/
+    /*border: 1px solid #333;*/
+    /*padding: 10px;*/
+/*}*/
 
 .card-class{
     margin-left: 50px;

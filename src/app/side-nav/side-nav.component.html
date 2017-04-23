@@ -28,11 +28,14 @@
 
     <div class="sidenav-content">
         <div class="row">
-            <div class="col-xs-6">
+            <div #myContainer id="videolist" class="col-xs-6" [style.margin-left]="getStyle()">
                 <video-list></video-list>
             </div>
             <div class="col-xs-6 card-class">
-                <card></card>
+                <div ngui-sticky>
+                    <card></card>
+
+                </div>
             </div>
         </div>
     </div>
