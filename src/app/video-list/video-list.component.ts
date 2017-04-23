@@ -23,7 +23,7 @@ export class VideoListComponent implements OnInit {
             return new Video(
                 item.id.videoId,
                 item.snippet.title,
-                item.snippet.thumbnails.default.url,
+                item.snippet.thumbnails.high.url,
                 item.snippet.channelTitle,
                 item.snippet.channelId,
                 moment(item.snippet.publishedAt).fromNow(),

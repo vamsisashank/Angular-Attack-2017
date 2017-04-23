@@ -1,19 +1,50 @@
-<div class="row">
-  <div class="col-xs-4">
-    <a href="#" (click)="onClick()"><img src="{{video.thumbnailUrl}}" class="img-fluid"></a>
-  </div>
-  <div class="col-xs-8">
-    <div class="row title"><a href="#" (click)="onClick()">{{video.title}}</a></div>
-    <div class="row channel">
-      <a href="http://youtube.com/channel/{{video.channelId}}" target="_blank">
-        {{video.channelTitle}}
-      </a>
+<div class="cards-display">
+    <div class="card card-inverse">
+        <img class="card-img" src="{{video.thumbnailUrl}}" alt="Card image">
+        <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, 0.65);">
+            <h4 class="card-title">{{video.title}}</h4>
+            <p class="card-text">{{video.description}}</p>
+            <p class="card-text"><small class="text-muted">{{video.publishedAt}}</small></p>
+        </div>
     </div>
-    <div class="row date">
-      {{video.publishedAt}}
-    </div>
-    <div class="row hidden-sm-down description">
-      {{video.description}}
-    </div>
-  </div>
 </div>
+
+<!--<div class="row">
+    <div class="col-xs-3">
+        <a href="#" (click)="onClick()"><img src="{{video.thumbnailUrl}}" class="img-fluid"></a>
+    </div>
+    <div class="col-xs-9">
+        <div class="row title"><a href="#" (click)="onClick()">{{video.title}}</a></div>
+        <div class="row channel">
+            <a href="http://youtube.com/channel/{{video.channelId}}" target="_blank">
+                {{video.channelTitle}}
+            </a>
+        </div>
+        <div class="row date">
+            {{video.publishedAt}}
+        </div>
+        <div class="row hidden-sm-down description">
+            {{video.description}}
+        </div>
+    </div>
+</div>-->
+
+<!--<div class="flex-row">-->
+    <!--<md-card>-->
+        <!--<md-card-header>-->
+            <!--<md-card-title><a href="#" (click)="onClick()">{{video.title}}</a></md-card-title>-->
+            <!--<md-card-subtitle style="padding-bottom: 6px;">-->
+                <!--<div>-->
+                    <!--<a href="http://youtube.com/channel/{{video.channelId}}" target="_blank">{{video.channelTitle}}</a>-->
+                <!--</div>-->
+            <!--</md-card-subtitle>-->
+        <!--</md-card-header>-->
+        <!--<img md-card-sm-image src="{{video.thumbnailUrl}}">-->
+        <!--<md-card-content>-->
+            <!--<div style="padding-top: 10px; margin-left: 10px;">{{video.description}}</div>-->
+        <!--</md-card-content>-->
+        <!--<md-card-footer>-->
+            <!--<div style="padding-left: 30px;">{{video.publishedAt}}</div>-->
+        <!--</md-card-footer>-->
+    <!--</md-card>-->
+<!--</div>-->
