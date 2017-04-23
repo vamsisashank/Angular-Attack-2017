@@ -7,4 +7,7 @@ export class CreateVideoService {
     getVideos(): any {
         return VIDEOS;
     }
+    postVideos(data): any {
+        return VIDEOS.push(data);
+    }
 }
